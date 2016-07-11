@@ -14,7 +14,7 @@
 
 module.exports = function(robot) {
 
-  robot.respond(/achimmer +1/i, addPoints);
+  robot.respond(/achimmer/i, addPoints);
   robot.respond(/achimmer -1/i, subPoints);
   robot.respond(/points/i, printPointCount);
 
@@ -25,4 +25,11 @@ module.exports = function(robot) {
     message = 'achimmers karma has increased to 10 points';
     msg.send(message);
   }
+
+  function subPoints(msg) {
+    var message;
+    message = 'achimmers karma has descreaded to 10 points';
+    msg.send(message);
+  }
+
 };
