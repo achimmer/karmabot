@@ -20,14 +20,9 @@ module.exports = function(robot) {
 
   var numPoints = 0;
 
-  /**
-   * add points to user name
-   * @param  {Hubot.Message Object} msg The message hubot saw
-   */
   function addPoints(msg) {
-    var message,
-        addPointCount = parseInt(msg.match[1], 10); // converts the string '10' to the number 10. This number is what was said to hubot in the slack channel
-  message = 'achimmers karma has increased to 10 points';
-  msg.send(message);
+    var message;
+    message = 'achimmers karma has increased to 10 points';
+    msg.send(message);
   }
 };

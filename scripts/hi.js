@@ -5,7 +5,7 @@
 module.exports = function(robot) {
 // Hear -- Will detect any message
   robot.hear(/hi/i, function(msg) {
-    msg.send("hello from hubot!");
+    msg.send("Hey-ho from hubot!");
   });
 // Respond -- Will only detect if prefixed with robots name
   robot.respond(/bye/i, function(msg) {
