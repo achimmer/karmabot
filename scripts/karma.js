@@ -26,16 +26,16 @@ module.exports = function(robot) {
 
     // pull out userName
     // var matches = msg.match(/@([a-z]+)/gi);
-    console.log('matches', matches);
+    // console.log('matches', matches);
 
     // find out how many points
     // find out which direction
-    if(!points[userName]){
-      points[userName] = 0;
-    }
-    points[userName] += numPoints;
-    var message = userName + 'karma has increased to' + numPoints + 'points';
-    msg.send(message);
+    // if(!points[userName]){
+    //   points[userName] = 0;
+    // }
+    // points[userName] += numPoints;
+    // var message = userName + 'karma has increased to' + numPoints + 'points';
+    // msg.send(message);
   }
 
 };
