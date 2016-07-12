@@ -22,7 +22,7 @@ module.exports = function(robot) {
   var points = {};
 
   function parseMessage(msg) {
-    console.log('msg', msg.message);
+    console.log('msg', msg.message.rawText);
 
     // pull out userName
     // var matches = msg.match(/@([a-z]+)/gi);
