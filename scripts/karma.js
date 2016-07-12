@@ -43,8 +43,7 @@ module.exports = function(robot) {
 
   function printPointCount(msg) {
     console.log(points);
-    var message = points;
-    msg.send(message);
+    msg.send(points);
   }
 
 };
