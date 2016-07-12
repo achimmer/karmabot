@@ -22,11 +22,12 @@ module.exports = function(robot) {
   var points = {};
 
   function parseMessage(msg) {
-    console.log('msg', msg.message.rawText);
+    // console.log('msg', msg.message.rawText);
 
     // pull out userName
-    // var matches = msg.match(/@([a-z]+)/gi);
-    // console.log('matches', matches);
+    var matches = msg.message.rawText.match(/@([a-z]+)/gi);
+
+    console.log('matches', matches);
 
     // find out how many points
     // find out which direction
