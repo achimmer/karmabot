@@ -8,13 +8,13 @@
 //   None
 //
 // Commands:
-//   karma @<name> +1  = adds 1 point to target names entry
-//   karma @<name> -1 = subtracts 1 point from name
+//   karma @<name> +  = adds 1 point to target names entry
+//   karma @<name> - = subtracts 1 point from name
 //   karma points = shows list of all user name points descending
 
 module.exports = function(robot) {
 
-  robot.respond(/@[a-z]+/gi, parseMessage); // rule
+  robot.hear(/@[a-z]+ [+-]/gi, parseMessage); // rule
   // robot.respond(/@[a-z]+ -1/gi, subPoints);
   // robot.respond(/points/gi, printPointCount);
 
@@ -22,21 +22,25 @@ module.exports = function(robot) {
   var points = {};
 
   function parseMessage(msg) {
-    // console.log('msg', msg.message.rawText);
+    // console.log('msg', msg.message.text);
 
     // pull out userName
-    var matches = msg.message.rawText.match(/@([a-z]+)/gi);
+    var re = /@([a-z]+) ([+-])/gi;
+    var matches = re.exec(msg.message.text);
+    var userName = matches[1];
+    var direction = matches[2];
+    var numPoints = direction === '+' ? 1 : -1;
 
-    console.log('matches', matches);
+    if(!points[userName]){
+      points[userName] = 0;
+    }
 
-    // find out how many points
-    // find out which direction
-    // if(!points[userName]){
-    //   points[userName] = 0;
-    // }
-    // points[userName] += numPoints;
-    // var message = userName + 'karma has increased to' + numPoints + 'points';
-    // msg.send(message);
+    points[userName] += numPoints;
+
+    var message = userName + ' karma are at ' + points[userName] + ' points';
+    msg.send(message);
+
+    // console.log('matches is', matches);
   }
 
 };
