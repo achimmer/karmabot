@@ -14,21 +14,29 @@
 
 module.exports = function(robot) {
 
-  robot.respond(/achimmer/i, addPoints);
-  robot.respond(/achimmer -1/i, subPoints);
-  robot.respond(/points/i, printPointCount);
+  robot.respond(/@[a-z]+/gi, addPoints);
+  robot.respond(/@[a-z]+ -1/gi, subPoints);
+  robot.respond(/points/gi, printPointCount);
 
-  var numPoints = 0;
+  // var numPoints = 0;
+  var points = {};
 
   function addPoints(msg) {
-    var message;
-    message = 'achimmers karma has increased to 10 points';
+
+    if(!points[userName]){
+      points[userName] = 0;
+    }
+    points[userName] += numPoints;
+    var message = userName + 'karma has increased to' + numPoints + 'points';
     msg.send(message);
   }
 
-  function subPoints(msg) {
-    var message;
-    message = 'achimmers karma has descreaded to 10 points';
+  function subPoints(userName, numPoints, msg) {
+    if(!points[userName]){
+      points[userName] = 0;
+    }
+    points[userName] -= numPoints;
+    var message = userName + 'karma has increased to' + numPoints + 'points';
     msg.send(message);
   }
 

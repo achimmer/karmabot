@@ -97,6 +97,7 @@ module.exports = function(robot) {
    * http://brians-mac.local:60351/Dash/uhsmcgth/developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/parseInt.html
    *
    */
+   
   function takeDownBeers(msg) {
 
     var message,
