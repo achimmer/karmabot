@@ -16,7 +16,7 @@ module.exports = function(robot) {
 
   robot.respond(/@[a-z]+/gi, addPoints);
   robot.respond(/@[a-z]+ -1/gi, subPoints);
-  robot.respond(/points/gi, printPointCount);
+  // robot.respond(/points/gi, printPointCount);
 
   // var numPoints = 0;
   var points = {};
