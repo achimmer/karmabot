@@ -25,7 +25,7 @@ module.exports = function(robot) {
     console.log('msg', msg);
 
     // pull out userName
-    var matches = msg.match(/@([a-z]+)/gi);
+    // var matches = msg.match(/@([a-z]+)/gi);
     console.log('matches', matches);
 
     // find out how many points
