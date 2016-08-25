@@ -43,7 +43,12 @@ module.exports = function(robot) {
 
   function printPointCount(msg) {
     console.log(points);
-    msg.send(points);
+    for (var userName in points) {
+      if (points.hasOwnProperty(variable)) {
+
+      }
+    }
+    msg.send('Total karma points:' + points.property);
   }
 
 };
